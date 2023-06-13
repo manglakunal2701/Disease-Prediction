@@ -1,0 +1,63 @@
+//main file
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form action="data.php" method="post">
+        Enter the firstname:<input type="text" name="firstname"><br>
+        Enter the lastname:<input type="text" name="lastname"><br>
+        Enter the emailid:<input type="text" name="email"><br>
+
+        <input type="submit" name="submit">
+    </form>
+</body>
+</html>
+
+//data.php
+<?php
+$name = $_POST['firstname'];
+$surname = $_POST['lastname'];
+$id=$_POST['email'];
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "user";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('$name','$surname','$id')";
+
+if ($conn->query($sql) === TRUE) {
+  echo "New record created successfully";
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+
+?>
+
+//
+let str=prompt("ENter the string:");
+let arr=['a','b','c','d','d','e','f','g','h',i,j,k,l,m,n,o,p,q,r,s,t,u,];
+let str2="";
+for(var i=0;i<str.length;i++){
+  for(var j=0;j<27;j++){
+    if(str[i]==arr[j]){
+      str2+=arr[j+1];
+       break;
+       }
+    }
+ }
+ console.log(str2);
