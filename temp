@@ -49,15 +49,15 @@ $conn->close();
 ?>
 
 //
-let str=prompt("ENter the string:");
-let arr=['a','b','c','d','d','e','f','g','h',i,j,k,l,m,n,o,p,q,r,s,t,u,];
-let str2="";
-for(var i=0;i<str.length;i++){
-  for(var j=0;j<27;j++){
-    if(str[i]==arr[j]){
-      str2+=arr[j+1];
-       break;
-       }
-    }
- }
- console.log(str2);
+
+
+
+
+
+
+      
+
+
+    
+
+
